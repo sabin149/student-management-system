@@ -1,0 +1,15 @@
+																		STUDENT`S BILL PORTAL
+ Student Id.:3						Course:BSc(Hons)Ethical Hacking and CyberSecurity
+ Student Name:lol						Bill No.:2412
+===================================================================================================
+ PARTICULARS											AMOUNT
+===================================================================================================
+Admission Fee											1
+Annual Fee											1
+Extra Curricular Fee											1
+Semester-1 Fee											1
+Semester-2 Fee											1
+University Registration Fee											1
+===================================================================================================
+Total Amount											Rs.6
+=================================****THANK YOU****=================================================

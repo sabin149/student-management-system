@@ -1,0 +1,42 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E722" />
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N812" />
+          <option value="N806" />
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="interface.conn.*" />
+          <option value="MySQL" />
+          <option value="mysql.connect" />
+          <option value="mysql.*" />
+          <option value="newproject.sms.Student.*" />
+          <option value="Std_info_BackEnd" />
+          <option value="newproject.gvjhkj.*" />
+          <option value="cs19b.cs19b.interface.login.*" />
+          <option value="pymysql.Connect.Login" />
+          <option value="pymysql.Connect.regis" />
+          <option value="pymysql.Connect.Register" />
+          <option value="pymysql.Connect.DBconnection" />
+          <option value="pymysql.Connect.Db_Connection" />
+          <option value="pymysql.Db_Connection" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
