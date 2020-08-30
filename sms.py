@@ -358,7 +358,7 @@ class Student:
                     content = self.Student_table.item(i)
                     pp = content['values']
                     roll.append(pp[0]), name.append(pp[1]), email.append(pp[2]), gender.append(pp[3]), contact.append(
-                        pp[4]), dob.append(pp[5]), Address.append(pp[6])
+                        pp[5]), dob.append(pp[4]), Address.append(pp[6])
                 dd = ['Roll No.', 'Name', 'Email', 'Gender', 'Contact', 'D.O.B', 'Address']
                 df = pandas.DataFrame(list(zip(roll, name, email, gender, dob, contact, Address)), columns=dd)
                 paths = r'{}.csv'.format(ff)
@@ -388,6 +388,6 @@ class Student:
 
     print(student_bill.__doc__)
 
-#
+
 # root = Tk()
 # iv = Student(root)
