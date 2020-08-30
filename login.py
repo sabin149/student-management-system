@@ -76,13 +76,14 @@ class LoginView:
             except Exception as e:
                 print(e)
                 return False
-    print("----------------------------------------------Functions of login window---------------------------------------Functions of Login window")
+
+    print(
+        "----------------------------------------------Functions of login window---------------------------------------Functions of Login window")
     print(on_login_click.__doc__)
 
     def signup(self):
         """signup:
     Opens the regis window while destroying current window login."""
-
 
         try:
             op = messagebox.askyesno("Registration Form", "Do You Want TO  Go To Registration Form?")
