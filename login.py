@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import messagebox
-
 from cs19b.newproject import regis, stm_query
 from cs19b.newproject.sms import Student
 

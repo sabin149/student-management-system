@@ -1,5 +1,4 @@
 import unittest
-
 from cs19b.newproject.stm_query import student
 
 

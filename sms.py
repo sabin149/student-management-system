@@ -2,10 +2,8 @@ import tkinter
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk, filedialog
-
 import pandas
 from cs19b.newproject import sorting
-
 from cs19b.newproject import bills
 from cs19b.newproject import stm_query
 

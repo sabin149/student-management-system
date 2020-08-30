@@ -1,3 +1,4 @@
+
 def sorting_data(arr):
     pointer = 0
     while pointer < len(arr):
