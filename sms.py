@@ -172,6 +172,8 @@ class Student:
         self.window.mainloop()
 
     def add_student(self):
+        """add_student:
+    It helps to add students data."""
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
@@ -189,7 +191,12 @@ class Student:
             print(e)
             return False
 
+    print("----------------------------------------------Functions of sms window---------------------------------------")
+    print(add_student.__doc__)
+
     def update_data(self):
+        """update_student:
+    It helps to update students data."""
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
@@ -207,17 +214,25 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(update_data.__doc__)
+
     def fetch(self):
+        """fetch:
+    It helps to fetch all the students data from database"""
         try:
             self.Student_table.delete(*self.Student_table.get_children())
-            data=sorting.sorting_data(stm_query.student().fetch_student())
+            data = sorting.sorting_data(stm_query.student().fetch_student())
             # data = stm_query.student().fetch_student()
             for i in data:
                 self.Student_table.insert("", "end", text=i[0], value=(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
         except Exception as e:
             print(e)
 
+    print(fetch.__doc__)
+
     def clearing(self):
+        """clearing:
+    It helps to clear all the entry boxes after adding or updating or deleting data."""
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
@@ -233,7 +248,11 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(clearing.__doc__)
+
     def clear_datas(self):
+        """clear_datas:
+    It helps to clear all the entry boxes."""
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
@@ -249,7 +268,11 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(clear_datas.__doc__)
+
     def cursor(self, event):
+        """cursor:
+    It helps retrieve data from tree view one row at a time """
         try:
             cursor_row = self.Student_table.focus()
             content = self.Student_table.item(cursor_row)
@@ -266,7 +289,11 @@ class Student:
             print(e)
             return False
 
+    print(cursor.__doc__)
+
     def delete__student_data(self):
+        """delete_student:
+    It helps to delete student data"""
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
@@ -279,7 +306,11 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(delete__student_data.__doc__)
+
     def search_data_student(self):
+        """search_data:
+    It helps to search student """
         try:
             if self.ent_search.get() != '':
                 da = stm_query.student().search(self.search_by.get(), self.ent_search.get())
@@ -294,7 +325,11 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(search_data_student.__doc__)
+
     def close(self):
+        """close:
+    It exits the sms window"""
         try:
             ob = messagebox.askyesno("Close", "Do You Want To Exit The Application?")
             if ob > 0:
@@ -303,10 +338,18 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(close.__doc__)
+
     def reset(self):
+        """reset:
+    It helps to reset the tree view"""
         self.Student_table.delete(*self.Student_table.get_children())
 
+    print(reset.__doc__)
+
     def export_student(self):
+        """export_student:
+    It helps to export all the data of student from the tree view into excel."""
         try:
             ob = messagebox.askyesno("Save", "Do you want to Save?")
             if ob > 0:
@@ -328,7 +371,13 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(export_student.__doc__)
+
     def student_bill(self):
+        """student_bill:
+    It takes user to bills window.
+        """
+
         try:
             ob = messagebox.askyesno("Bill", "Do You Want TO  Go To Student Bill?")
             if ob > 0:
@@ -339,6 +388,8 @@ class Student:
         except Exception as e:
             print(e)
 
+    print(student_bill.__doc__)
 
-root = Tk()
-iv = Student(root)
+#
+# root = Tk()
+# iv = Student(root)

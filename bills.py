@@ -44,7 +44,7 @@ class bill:
                         font=("arial", 15, "bold"))
         L1.place(x=0, y=80, width=1290)
 
-        lbl_name = Label(L1, text="Name", bg='#BDB76B',font=("arial", 12, "bold"))
+        lbl_name = Label(L1, text="Name", bg='#BDB76B', font=("arial", 12, "bold"))
         lbl_name.grid(row=0, column=0, padx=20, pady=5)
 
         ent_name = ttk.Combobox(L1, width=15, textvariable=self.name, state='readonly', font=("arial", 15, "bold"))
@@ -79,7 +79,8 @@ class bill:
         ent_search.grid(row=0, column=7, pady=5, padx=10)
 
         # BUTTON
-        search_btn = Button(L1, text="Search", command=self.find_bill,bg='#FFE4C4', width=9, font=("arial", 15, "bold"))
+        search_btn = Button(L1, text="Search", command=self.find_bill, bg='#FFE4C4', width=9,
+                            font=("arial", 15, "bold"))
         search_btn.grid(row=0, column=8)
 
         # FRAME
@@ -151,22 +152,27 @@ class bill:
         L5 = Frame(L4, bg="#BDB76B")
         L5.place(x=650, y=0, width=580, height=80)
 
-        tot_btn = Button(L5, text="Total", command=self.total, width=8,bg='#FFE4C4', font=("arial", 15, "bold"))
+        tot_btn = Button(L5, text="Total", command=self.total, width=8, bg='#FFE4C4', font=("arial", 15, "bold"))
         tot_btn.grid(row=0, column=0, padx=15, pady=15)
 
-        bil_btn = Button(L5, text="Generate Bill", command=self.particulars,bg='#FFE4C4', width=12, font=("arial", 15, "bold"))
+        bil_btn = Button(L5, text="Generate Bill", command=self.particulars, bg='#FFE4C4', width=12,
+                         font=("arial", 15, "bold"))
         bil_btn.grid(row=0, column=1, padx=15, pady=15)
 
-        clr_btn = Button(L5, text="Clear", command=self.clear_ent,bg='#FFE4C4', width=8, font=("arial", 15, "bold"))
+        clr_btn = Button(L5, text="Clear", command=self.clear_ent, bg='#FFE4C4', width=8, font=("arial", 15, "bold"))
         clr_btn.grid(row=0, column=2, padx=15, pady=15)
 
-        ext_btn = Button(L5, text="Close", command=self.close,bg='#FFE4C4', width=8, font=("arial", 15, "bold"))
+        ext_btn = Button(L5, text="Close", command=self.close, bg='#FFE4C4', width=8, font=("arial", 15, "bold"))
         ext_btn.grid(row=0, column=3, padx=15, pady=15)
 
         self.welcome()
         self.window.mainloop()
 
     def total(self):
+        """
+    total:
+    It helps to add all the integer values of the entry boxes.
+        """
         try:
             self.admission_fee = self.admission.get()
             self.annual_fee = self.annual.get()
@@ -189,6 +195,8 @@ class bill:
             print(e)
 
     def welcome(self):
+        """welcome:
+    It helps to show the student id, course name, student name, and bill no in the bill area. """
         try:
             self.textarea.delete('1.0', END)
             self.textarea.insert(
@@ -208,6 +216,9 @@ class bill:
             print(e)
 
     def particulars(self):
+        """particulars:
+    It helps to get all the entry boxes values in the bill area.
+        """
         try:
             if self.name.get() == "" or self.roll.get() == "" or self.course.get() == "":
                 messagebox.showerror("ERROR", "Enter Fee Details")
@@ -246,6 +257,8 @@ class bill:
             print(e)
 
     def save_bill(self):
+        """save_bill:
+    It asks user to save in any location of the computer."""
         try:
             op = messagebox.askyesno("Save Bill", "Do You Want TO Save The Bill?")
             if op > 0:
@@ -258,8 +271,12 @@ class bill:
                 return False
         except Exception as e:
             print(e)
+    print("----------------------------------------------Functions of bills window---------------------------------------")
+    print(save_bill.__doc__)
 
     def find_bill(self):
+        """find_bill:
+    This function helps to find the bill of the student."""
         try:
             present = "no"
             for i in os.listdir("BILLS/"):
@@ -275,7 +292,11 @@ class bill:
         except Exception as e:
             print(e)
 
+    print(find_bill.__doc__)
+
     def clear_ent(self):
+        """clear_ent:
+    It clears all the entry boxes and bill area."""
         try:
             op = messagebox.askyesno("Clear", "Do you want to clear data?")
             if op > 0:
@@ -302,13 +323,21 @@ class bill:
         except Exception as e:
             print(e)
 
+    print(clear_ent.__doc__)
+
     def close(self):
+        """close:
+    It closes the bills window.
+    """
+
         try:
             ob = messagebox.askyesno("Exit", "Do you want to exit?")
             if ob > 0:
                 self.window.destroy()
         except Exception as e:
             print(e)
+
+    print(close.__doc__)
 
 #
 # bill()

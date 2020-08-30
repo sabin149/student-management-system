@@ -68,12 +68,13 @@ class registration:
 
         self.btn_reset = Button(self.frame_login, text='Reset', bg='#FFE4C4', font=('Calibri', 20, 'bold'), fg='black',
                                 command=self.reset)
-        """Allows user to clear the entry box."""
         self.btn_reset.grid(row=7, column=2)
 
         self.window.mainloop()
 
     def reset(self):
+        """reset:
+    Resets all the entry boxes """
         try:
             if self.entry_un.get() != '' and self.entry_pw.get() != '' and self.entry_n.get() != '' and \
                     self.entry_a.get() != '' and self.entry_p.get() != '' and self.entry_e.get() != '':
@@ -87,16 +88,23 @@ class registration:
                 tkinter.messagebox.showerror('Error', 'Please Fill Out The All Empty Boxes.')
         except Exception as e:
             print(e)
+    print('----------------------------------------------Functions of regis window---------------------------------------')
+    print(reset.__doc__)
 
     def back(self):
+        """back:
+    It helps to go back in login window"""
         try:
             messagebox.showinfo('Back', 'Going To The Sign In ')
             self.window.destroy()
             import login
         except Exception as e:
             print(e)
+    print(back.__doc__)
 
     def clear(self):
+        """clear:
+    It helps to clear entry boxes after registering"""
         self.entry_un.delete(0, END)
         self.entry_pw.delete(0, END)
         self.entry_n.delete(0, END)
@@ -105,19 +113,27 @@ class registration:
         self.entry_e.delete(0, END)
 
     def submit(self):
+        """submit:
+    Stores the user details of the user into the program and opens the signup window for login.
+                     """
 
-        if self.entry_un.get() == '' or self.entry_pw.get() == '' or self.entry_n.get() == '' \
-                or self.entry_a.get() == '' or self.entry_p.get() == '' or self.entry_e.get() == '':
+        try:
+            if self.entry_un.get() == '' or self.entry_pw.get() == '' or self.entry_n.get() == '' \
+                    or self.entry_a.get() == '' or self.entry_p.get() == '' or self.entry_e.get() == '':
 
-            messagebox.showwarning('Error', 'All Fields Are Required')
+                messagebox.showwarning('Error', 'All Fields Are Required')
 
-        else:
-            stm_query.student().sign_up(self.entry_un.get(),
-                                        self.entry_pw.get(), self.entry_n.get(), self.entry_a.get(),
-                                        self.entry_p.get(), self.entry_e.get())
-            messagebox.showinfo('Success', 'Registered Successfully')
-            self.clear()
-            self.window.destroy()
-            import login
+            else:
+                stm_query.student().sign_up(self.entry_un.get(),
+                                            self.entry_pw.get(), self.entry_n.get(), self.entry_a.get(),
+                                            self.entry_p.get(), self.entry_e.get())
+                messagebox.showinfo('Success', 'Registered Successfully')
+                self.clear()
+                self.window.destroy()
+                import login
+        except Exception as e:
+            print(e)
+
+    print(submit.__doc__)
 
 # registration()
