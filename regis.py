@@ -57,17 +57,20 @@ class registration:
         self.entry_e = Entry(self.frame_login, font=('arial', 10, 'bold'))
         self.entry_e.grid(row=5, column=1, padx=10, pady=10)
 
-        self.btn_regis = Button(self.frame_login, bg='#FFE4C4', command=self.submit, text="Submit",
+        D_Frame = Frame(self.window, bd=4, relief=RIDGE, bg='#BDB76B')
+        D_Frame.place(x=150, y=370, width=300, height=70)
+
+        self.btn_regis = Button(D_Frame, bg='#FFE4C4', command=self.submit, text="Submit",
                                 font=('Calibri', 20, 'bold'))
-        self.btn_regis.grid(row=7, column=1)
+        self.btn_regis.grid(row=0, column=1,padx=10)
 
-        self.btn_back = Button(self.frame_login, bg='#FFE4C4', text="Back", command=self.back,
+        self.btn_back = Button(D_Frame, bg='#FFE4C4', text="Back", command=self.back,
                                font=('Calibri', 20, 'bold'))
-        self.btn_back.grid(row=7, column=0)
+        self.btn_back.grid(row=0, column=0)
 
-        self.btn_reset = Button(self.frame_login, text='Reset', bg='#FFE4C4', font=('Calibri', 20, 'bold'), fg='black',
+        self.btn_reset = Button(D_Frame, text='Reset', bg='#FFE4C4', font=('Calibri', 20, 'bold'), fg='black',
                                 command=self.reset)
-        self.btn_reset.grid(row=7, column=2)
+        self.btn_reset.grid(row=0, column=2,padx=7)
 
         self.window.mainloop()
 
@@ -135,4 +138,4 @@ class registration:
 
     print(submit.__doc__)
 
-# registration()
+registration()
