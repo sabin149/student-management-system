@@ -338,5 +338,4 @@ class bill:
 
     print(close.__doc__)
 
-#
-bill()
+# bill()
