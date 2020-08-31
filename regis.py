@@ -138,4 +138,4 @@ class registration:
 
     print(submit.__doc__)
 
-registration()
+# registration()
