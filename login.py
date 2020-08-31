@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
-from cs19b.newproject import regis, stm_query
-from cs19b.newproject.sms import Student
+from cs19b.newproject import registration, query
+from cs19b.newproject.main_interface import Student
 
 
 class LoginView:
@@ -63,7 +63,7 @@ class LoginView:
             messagebox.showwarning('Error', 'All Fields Are Required')
         else:
             try:
-                user = stm_query.student().sign_in(self.entry_un.get(), self.entry_pw.get())
+                user = query.student().sign_in(self.entry_un.get(), self.entry_pw.get())
                 if user:
                     messagebox.showinfo('Success', 'Welcome')
                     self.window.destroy()
@@ -88,7 +88,7 @@ class LoginView:
             op = messagebox.askyesno("Registration Form", "Do You Want TO  Go To Registration Form?")
             if op > 0:
                 self.window.destroy()
-                regis.registration()
+                registration.registration()
             else:
                 return False
         except Exception as e:

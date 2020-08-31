@@ -1,5 +1,5 @@
 import unittest
-from cs19b.newproject.stm_query import student
+from cs19b.newproject.query import student
 
 
 class MyTest(unittest.TestCase):

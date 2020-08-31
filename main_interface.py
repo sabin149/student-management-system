@@ -5,7 +5,7 @@ from tkinter import ttk, filedialog
 import pandas
 from cs19b.newproject import sorting
 from cs19b.newproject import bills
-from cs19b.newproject import stm_query
+from cs19b.newproject import query
 
 
 class Student:
@@ -175,10 +175,10 @@ class Student:
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
-                if stm_query.student().add_students(self.Roll_No.get(), self.name.get(),
-                                                    self.email.get(), self.gender.get(),
-                                                    self.contact.get(), self.dob.get(),
-                                                    self.address.get()):
+                if query.student().add_students(self.Roll_No.get(), self.name.get(),
+                                                self.email.get(), self.gender.get(),
+                                                self.contact.get(), self.dob.get(),
+                                                self.address.get()):
                     messagebox.showinfo('Success', 'Student Details Added')
                     self.fetch()
                     self.clearing()
@@ -199,10 +199,10 @@ class Student:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
 
-                if stm_query.student().update_details(self.name.get(), self.email.get(),
-                                                      self.gender.get(), self.contact.get(),
-                                                      self.dob.get(), self.address.get(),
-                                                      self.Roll_No.get()):
+                if query.student().update_details(self.name.get(), self.email.get(),
+                                                  self.gender.get(), self.contact.get(),
+                                                  self.dob.get(), self.address.get(),
+                                                  self.Roll_No.get()):
                     messagebox.showinfo('Success', 'Updated Successfully')
 
                 self.fetch()
@@ -219,7 +219,7 @@ class Student:
     It helps to fetch all the students data from database"""
         try:
             self.Student_table.delete(*self.Student_table.get_children())
-            data = sorting.sorting_data(stm_query.student().fetch_student())
+            data = sorting.sorting_data(query.student().fetch_student())
             for i in data:
                 self.Student_table.insert("", "end", text=i[0], value=(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
         except Exception as e:
@@ -294,7 +294,7 @@ class Student:
         try:
             if self.Roll_No.get() != '' and self.name.get() != '' and self.email.get() != '' and \
                     self.gender.get() != '' and self.contact.get() != '' and self.dob.get() != '' and self.address.get() != '':
-                stm_query.student().delete_student(self.Roll_No.get())
+                query.student().delete_student(self.Roll_No.get())
                 messagebox.showinfo('Success', 'Deleted Successfully')
                 self.clearing()
                 self.fetch()
@@ -310,7 +310,7 @@ class Student:
     It helps to search student """
         try:
             if self.ent_search.get() != '':
-                da = stm_query.student().search(self.search_by.get(), self.ent_search.get())
+                da = query.student().search(self.search_by.get(), self.ent_search.get())
                 if len(da) != 0:
                     self.Student_table.delete(*self.Student_table.get_children())
                     for row in da:

@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import messagebox
 from tkinter import *
-from cs19b.newproject import stm_query
+from cs19b.newproject import query
 
 
 class registration:
@@ -126,9 +126,9 @@ class registration:
                 messagebox.showwarning('Error', 'All Fields Are Required')
 
             else:
-                stm_query.student().sign_up(self.entry_un.get(),
-                                            self.entry_pw.get(), self.entry_n.get(), self.entry_a.get(),
-                                            self.entry_p.get(), self.entry_e.get())
+                query.student().sign_up(self.entry_un.get(),
+                                        self.entry_pw.get(), self.entry_n.get(), self.entry_a.get(),
+                                        self.entry_p.get(), self.entry_e.get())
                 messagebox.showinfo('Success', 'Registered Successfully')
                 self.clear()
                 self.window.destroy()
