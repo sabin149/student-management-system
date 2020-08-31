@@ -24,6 +24,11 @@ class MyTest(unittest.TestCase):
         actual_result = d.sign_in('q', 'q')
         self.assertTrue(actual_result)
 
+    def test_login2(self):
+        d = student()
+        actual_result = d.sign_in('i', 'q')
+        self.assertFalse(actual_result)
+
     def test_register(self):
         e = student()
         actual_result = e.sign_up('r', 'r', 'r', 'ktm', '9874857825', 'ihfwqh@gmail.com')
@@ -33,5 +38,7 @@ class MyTest(unittest.TestCase):
         e = student()
         actual_result = e.delete_student('roll_no')
         self.assertTrue(actual_result)
+
+
 
 
