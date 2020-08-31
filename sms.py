@@ -220,7 +220,6 @@ class Student:
         try:
             self.Student_table.delete(*self.Student_table.get_children())
             data = sorting.sorting_data(stm_query.student().fetch_student())
-            # data = stm_query.student().fetch_student()
             for i in data:
                 self.Student_table.insert("", "end", text=i[0], value=(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
         except Exception as e:
