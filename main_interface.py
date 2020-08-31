@@ -12,7 +12,7 @@ class Student:
     def __init__(self, window):
         self.window = window
         self.window.title("Student Management System")
-        self.window.geometry('1350x800+100+0')
+        self.window.geometry('1350x780+100+0')
         self.window.config(bg='#BDB76B')
         self.window.resizable(False, False)
 

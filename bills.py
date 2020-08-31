@@ -145,7 +145,7 @@ class bill:
         lbl_total = Label(L4, text="Total bill in Rs.", bg="#BDB76B", fg="black", font=("arial", 20, "bold"))
         lbl_total.grid(row=0, column=0, pady=1, sticky="w")
 
-        ent_total = Entry(L4, width=18, textvariable=self.totals, font=("arial", 15, "bold"))
+        ent_total = Entry(L4, width=18, textvariable=self.totals,state='readonly', font=("arial", 15, "bold"))
         ent_total.grid(row=0, column=1, padx=10, pady=1)
 
         L5 = Frame(L4, bg="#BDB76B")
