@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import messagebox
 from tkinter import *
-from cs19b.newproject import query
+from newproject import query
 
 
 class registration:
@@ -21,17 +21,17 @@ class registration:
         self.frame_login = Frame(self.window, bg='#BDB76B')
         self.frame_login.pack()
 
-        self.label_un = Label(self.frame_login, font=('Calibri', 15, 'bold'), bg='#BDB76B', text="Username")
-        self.label_un.grid(row=0, column=0, pady=10, padx=10, sticky=W)
+        self.label_username = Label(self.frame_login, font=('Calibri', 15, 'bold'), bg='#BDB76B', text="Username")
+        self.label_username.grid(row=0, column=0, pady=10, padx=10, sticky=W)
 
-        self.entry_un = Entry(self.frame_login, font=('arial', 10, 'bold'))
-        self.entry_un.grid(row=0, column=1, padx=10, pady=10)
+        self.entry_username = Entry(self.frame_login, font=('arial', 10, 'bold'))
+        self.entry_username.grid(row=0, column=1, padx=10, pady=10)
 
-        self.label_pw = Label(self.frame_login, font=('Calibri', 15, 'bold'), bg='#BDB76B', text="Password")
-        self.label_pw.grid(row=1, column=0, padx=10, pady=10, sticky=W)
+        self.label_password = Label(self.frame_login, font=('Calibri', 15, 'bold'), bg='#BDB76B', text="Password")
+        self.label_password.grid(row=1, column=0, padx=10, pady=10, sticky=W)
 
-        self.entry_pw = Entry(self.frame_login, show='*', font=('arial', 10, 'bold'))
-        self.entry_pw.grid(row=1, column=1, padx=10, pady=10)
+        self.entry_password = Entry(self.frame_login, show='*', font=('arial', 10, 'bold'))
+        self.entry_password.grid(row=1, column=1, padx=10, pady=10)
 
         self.label_n = Label(self.frame_login, font=('Calibri', 15, 'bold'), bg='#BDB76B', text="Name")
         self.label_n.grid(row=2, column=0, padx=10, pady=10, sticky=W)
@@ -78,10 +78,10 @@ class registration:
         """reset:
     Resets all the entry boxes """
         try:
-            if self.entry_un.get() != '' and self.entry_pw.get() != '' and self.entry_n.get() != '' and \
+            if self.entry_username.get() != '' and self.entry_password.get() != '' and self.entry_n.get() != '' and \
                     self.entry_a.get() != '' and self.entry_p.get() != '' and self.entry_e.get() != '':
-                self.entry_un.delete(0, END)
-                self.entry_pw.delete(0, END)
+                self.entry_username.delete(0, END)
+                self.entry_password.delete(0, END)
                 self.entry_n.delete(0, END)
                 self.entry_a.delete(0, END)
                 self.entry_p.delete(0, END)
@@ -107,8 +107,8 @@ class registration:
     def clear(self):
         """clear:
     It helps to clear entry boxes after registering"""
-        self.entry_un.delete(0, END)
-        self.entry_pw.delete(0, END)
+        self.entry_username.delete(0, END)
+        self.entry_password.delete(0, END)
         self.entry_n.delete(0, END)
         self.entry_a.delete(0, END)
         self.entry_p.delete(0, END)
@@ -120,14 +120,14 @@ class registration:
                      """
 
         try:
-            if self.entry_un.get() == '' or self.entry_pw.get() == '' or self.entry_n.get() == '' \
+            if self.entry_username.get() == '' or self.entry_password.get() == '' or self.entry_n.get() == '' \
                     or self.entry_a.get() == '' or self.entry_p.get() == '' or self.entry_e.get() == '':
 
                 messagebox.showwarning('Error', 'All Fields Are Required')
 
             else:
-                query.student().sign_up(self.entry_un.get(),
-                                        self.entry_pw.get(), self.entry_n.get(), self.entry_a.get(),
+                query.student().sign_up(self.entry_username.get(),
+                                        self.entry_password.get(), self.entry_n.get(), self.entry_a.get(),
                                         self.entry_p.get(), self.entry_e.get())
                 messagebox.showinfo('Success', 'Registered Successfully')
                 self.clear()

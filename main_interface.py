@@ -3,9 +3,9 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk, filedialog
 import pandas
-from cs19b.newproject import sorting
-from cs19b.newproject import bills
-from cs19b.newproject import query
+from newproject import sorting, Marksheet
+from newproject import bills
+from newproject import query
 
 
 class Student:
@@ -129,10 +129,14 @@ class Student:
 
         self.export_btn = Button(Detail_Frame, bg='#FFE4C4', text='Export', font=('arial', 10, 'bold'),
                                  command=self.export_student
-                                 ).place(x=10, y=620, width=330)
+                                 ).place(x=10, y=620, width=240)
+        self.mark_btn = Button(Detail_Frame, bg='#FFE4C4', text='Mark sheet', font=('arial', 10, 'bold'),
+                                 command=self.marksheet
+                                 ).place(x=270, y=620, width=240)
+
         self.bill_btn = Button(window, bg='#FFE4C4', text='Student Bill', font=('arial', 10, 'bold'),
                                command=self.student_bill
-                               ).place(x=945, y=725, width=330)
+                               ).place(x=1035, y=725, width=240)
 
         # table frame
         Table_Frame = Frame(Detail_Frame, bd=4, relief=RIDGE, bg='black')
@@ -189,7 +193,8 @@ class Student:
             print(e)
             return False
 
-    print("----------------------------------------------Functions of sms window---------------------------------------")
+    print(
+        "----------------------------------------------Functions of sms window---------------------------------------")
     print(add_student.__doc__)
 
     def update_data(self):
@@ -386,6 +391,23 @@ class Student:
             print(e)
 
     print(student_bill.__doc__)
+
+    def marksheet(self):
+        """student_bill:
+           It takes user to bills window.
+               """
+
+        try:
+            ob = messagebox.askyesno("Mark sheet", "Do You Want TO  Go To Student mark sheet?")
+            if ob > 0:
+                self.window.destroy()
+                Marksheet.student_mark_sheet()
+            else:
+                return True
+        except Exception as e:
+            print(e)
+
+    print(marksheet.__doc__)
 
 
 # root = Tk()

@@ -1,4 +1,4 @@
-from cs19b.newproject.Connection import My_Db
+from newproject.Connection import My_Db
 
 
 class student(My_Db):

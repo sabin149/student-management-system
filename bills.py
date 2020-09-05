@@ -173,12 +173,12 @@ class bill:
     It helps to add all the integer values of the entry boxes.
         """
         try:
-            self.admission_fee = self.admission.get()
-            self.annual_fee = self.annual.get()
-            self.eca_fee = self.eca.get()
-            self.sem1_fee = self.sem1.get()
-            self.sem2_fee = self.sem2.get()
-            self.univ_fee = self.univ.get()
+            self.admission_fee = int(self.admission.get())
+            self.annual_fee = int(self.annual.get())
+            self.eca_fee = int(self.eca.get())
+            self.sem1_fee = int(self.sem1.get())
+            self.sem2_fee = int(self.sem2.get())
+            self.univ_fee = int(self.univ.get())
 
             self.total_fee = (
                     self.admission_fee +
