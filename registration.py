@@ -1,7 +1,9 @@
 import tkinter
 from tkinter import messagebox
 from tkinter import *
-from newproject import query
+
+import query
+
 
 
 class registration:
