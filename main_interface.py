@@ -3,9 +3,12 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk, filedialog
 import pandas
-from newproject import sorting, Marksheet
-from newproject import bills
-from newproject import query
+
+import Marksheet
+import bills
+import query
+import sorting
+
 
 
 class Student:
