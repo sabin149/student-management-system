@@ -1,5 +1,6 @@
 import unittest
-from newproject.query import student
+from query import student
+
 
 
 class MyTest(unittest.TestCase):
