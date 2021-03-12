@@ -1,7 +1,9 @@
 from tkinter import *
 from tkinter import messagebox
-from newproject import registration, query
-from newproject.main_interface import Student
+
+import query
+import registration
+from main_interface import Student
 
 
 class LoginView:
